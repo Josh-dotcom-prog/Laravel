@@ -25,9 +25,7 @@ $jobs = [
 ];
 
 Route::get('/', function () {
-    return view('index', [
-        'greeting' => 'Hello',
-    ]);
+    return view('index');
 });
 
 Route::get('/jobs', function () use ($jobs) {
@@ -37,7 +35,7 @@ Route::get('/jobs', function () use ($jobs) {
 });
 
 Route::get('/jobs/{id}', function ($id) use ($jobs) {
-    $job = Arr::first($jobs, fn($job) => $job['id'] = $id);
+    $job = Arr::first($jobs, fn($job) => $job['id'] == $id);
     return view('job', ['job' => $job]);
 });
 
