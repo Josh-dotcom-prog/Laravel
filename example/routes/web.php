@@ -5,12 +5,12 @@ use illuminate\Support\Arr;
 use App\Models\Job;
 
 Route::get('/', function () {
-   return view('index');
+    return view('index');
 });
 
 //Retrieves all jobs from the database
 Route::get('/jobs', function () {
-    $jobs = Job::with('employer')->get();
+    $jobs = Job::with('employer')->paginate(3);
     return view('jobs', [
         'jobs' => $jobs
     ]);
