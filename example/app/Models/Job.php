@@ -7,12 +7,13 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Arr;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Job extends Model {
+class Job extends Model
+{
     use HasFactory;
 
     protected $table = 'job_listings';
 
-    protected $fillable = ['title','salary'];
+    protected $guarded = [];
 
     public function employer()
     {
