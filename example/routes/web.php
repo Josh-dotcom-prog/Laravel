@@ -6,12 +6,13 @@ use App\Models\Job;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
+use App\Jobs\TranslateJob;
 
 
 Route::get('test', function () {
-    dispatch(function () {
-        logger('hello from the queue');
-    });
+    $job = Job::first();
+
+    TranslateJob::dispatch($job);
     return 'Done';
 });
 

@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home page</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  {{--
+  <script src="https://cdn.tailwindcss.com"></script> --}}
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
@@ -30,16 +32,16 @@
 
               <div class="relative ml-3">
                 @guest
-          <x-nav-link href="/login" :active="request()->is('login')">Log In</x-nav-link>
-          <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
-        @endguest
+                  <x-nav-link href="/login" :active="request()->is('login')">Log In</x-nav-link>
+                  <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
+                @endguest
 
                 @auth
-          <form method="POST" action="/logout">
-            @csrf
-            <x-form-button>Log Out</x-form-button>
-          </form>
-        @endauth
+                  <form method="POST" action="/logout">
+                    @csrf
+                    <x-form-button>Log Out</x-form-button>
+                  </form>
+                @endauth
               </div>
             </div>
           </div>

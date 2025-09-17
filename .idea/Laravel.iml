@@ -234,6 +234,8 @@
       <excludeFolder url="file://$MODULE_DIR$/example/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/example/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/example/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/example/vendor/barryvdh/laravel-debugbar" />
+      <excludeFolder url="file://$MODULE_DIR$/example/vendor/php-debugbar/php-debugbar" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
